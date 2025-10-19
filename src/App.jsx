@@ -1,41 +1,57 @@
+import { Routes, Route, Link } from "react-router-dom";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+//import PortfolioWeb_Project from './topics/project1_portfolioWeb/PortfolioWeb';
+//import One_Intro_Learn from "./topics/topic1/Intro_Learn";
+import { Suspense, lazy } from "react";
+import { topics } from "./topics/topicsConfig";
 import './App.css'
 
-// JSX is a syntax extension for JavaScript that looks like HTML.
 
-// It allows you to write HTML-like code within JavaScript,
-// Which React then transforms into JavaScript objects.
 
-// 1. You can embed any valid JavaScript expression inside curly braces {} in JSX.
-// 2. JSX attributes use camelCase syntax.
-
-function WelcomeMessage(name){
-  return <h1>Hello, {name}!</h1>
-}
 
 function App() {
   
-    const element = <h1>Hello, world!</h1>
-    const name = "Saurav";
-    const isLoggedin = true;
-    if(isLoggedin){
-  return (
-    <div>
-      {WelcomeMessage("Alice")}
-      <h1>Logged in.</h1>
-      {element}
-      {10+2}
-      <h1 className='greeting'>My name is {name}</h1>
-      <button style={{backgroundColor: 'green', color: 'white'}}>Click Me</button>
-      <button onClick={() => alert(`Button Clicked!`)}>
-        Alert Me!
-      </button>
-    </div>
-  )
-}
-return <h1>Not logged in.</h1>
+    return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <nav className='navbar'>
+        <Link to="/" className='nav-link'>Home</Link> | <Link to="/topics" className='nav-link'>Topics</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<h1>Welcome! Choose a topic</h1>} />
+
+        {/* Topics Index Page */}
+        <Route 
+          path="/topics"
+          element={
+            <ul>
+              {topics.map((t) => (
+                <li key={t.path}>
+                  <Link to={`/topics/${t.path}`}>{t.name}</Link>
+                </li>
+              ))}
+            </ul>
+          }
+        />
+
+        {/* Dynamically create routes */}
+        {topics.map((t) => {
+          const Component = lazy(t.component);
+          return (
+            <Route
+              key={t.path}
+              path={`/topics/${t.path}`}
+              element={<Component />}
+            />
+          );
+        })}
+      </Routes>
+    </Suspense>
+  );
+
+  
 }
 
 export default App

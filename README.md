@@ -27,6 +27,16 @@ Learning React with Vite — structured notes, examples, and practice projects f
 This repository is my structured learning hub for mastering **React** with **Vite**.  
 It documents my progress through hands‑on topics, projects, and experiments, serving as both a **knowledge base** and a **reference guide** for modern frontend development.
 
+## 📚 Project Structure & Approach
+
+This repository is organized as a **learning portfolio** for React + Vite.  
+Each new concept or mini‑project lives inside its own folder under `src/topics/`.  
+
+Key features of this approach:
+- **Shared Layout** → A common `Layout` component provides a consistent navbar and footer across all pages.
+- **Dynamic Imports** → Topics are lazy‑loaded using `React.lazy` and `Suspense`, so each page loads only when visited.
+- **Auto‑Generated Topics Index** → The `/topics` route automatically lists all available topics by reading from a central config (or via Vite’s `import.meta.glob`), so adding a new topic requires no manual router edits.
+
 ---
 
 ## 📚 Learning Roadmap
