@@ -1,10 +1,10 @@
-function ProfileCard(props) {
+function ProfileCard({name, age,marks, isMember}) {
     return (
         <div>
-            <h2>Name: {props.name}</h2>
-            <h2>Age: {props.age}</h2>
-            <h2>Marks: {props.marks}</h2>
-            <h2>Status: {props.isMember ? "Active Member" : "Guest"}</h2>
+            <h2>Name: {name}</h2>
+            <h2>Age: {age}</h2>
+            <h2>Marks: {marks}</h2>
+            <h2>Status: {isMember ? "Active Member" : "Guest"}</h2>
         </div>
     )
 }
