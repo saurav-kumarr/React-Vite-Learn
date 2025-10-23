@@ -15,14 +15,23 @@ function Parent() {
         alert(`You clicked on: ${hobby}`)
     };
 
+    const aliceProfile = {
+        name:"Alice",
+         age:"22",
+         marks:"55" ,
+         isMember:true,
+         hobbies:['Reading','Cooking'],
+         onHobbyClick:handleHobbyClick 
+    }
+
     return (
         <div>
-        <ProfileCard name="Alice" age="22" marks="55" 
+        <ProfileCard /*name="Alice" age="22" marks="55" 
         isMember={true} hobbies={['Reading','Cooking']}
-        onHobbyClick={handleHobbyClick} />
+        onHobbyClick={handleHobbyClick} */ {...aliceProfile}/>
 
         <ProfileCard name="Saurav" age="24" marks={56} 
-        isMember={false} hobbies={['Reading','Cooking']}
+        isMember={false} hobbies={['Swimming','Gymming']}
          onHobbyClick={handleHobbyClick} />
         </div>
     );
