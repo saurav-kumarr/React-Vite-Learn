@@ -11,10 +11,19 @@ function Parent() {
     // With destructuring
     const {name, age} = person;
 
+    const handleHobbyClick = (hobby) => {
+        alert(`You clicked on: ${hobby}`)
+    };
+
     return (
         <div>
-        <ProfileCard name="Alice" age="22" marks="55" isMember={true}/>
-        <ProfileCard name="Saurav" age="24" marks={56} isMember={false}/>
+        <ProfileCard name="Alice" age="22" marks="55" 
+        isMember={true} hobbies={['Reading','Cooking']}
+        onHobbyClick={handleHobbyClick} />
+
+        <ProfileCard name="Saurav" age="24" marks={56} 
+        isMember={false} hobbies={['Reading','Cooking']}
+         onHobbyClick={handleHobbyClick} />
         </div>
     );
 }
