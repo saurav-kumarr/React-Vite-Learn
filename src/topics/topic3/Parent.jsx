@@ -15,6 +15,7 @@ function Parent() {
         alert(`You clicked on: ${hobby}`)
     };
 
+    // Props and the Spread Syntax
     const aliceProfile = {
         name:"Alice",
          age:"22",
