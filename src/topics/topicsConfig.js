@@ -24,6 +24,11 @@ export const topics = [
     path: "hooks",
     name: "React Hooks",
     component: () => import("./topic4/ReactHooks.jsx")
+  },
+  {
+    path: "array&objects",
+    name: "Passing Array and Objects to State",
+    component: () => import("./topic4/Array&ObjectsState.jsx")
   }
 
 ];
