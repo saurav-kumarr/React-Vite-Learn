@@ -19,6 +19,11 @@ export const topics = [
     path: "props",
     name: "Props",
     component: () => import("./topic3/Parent.jsx")
+  },
+  {
+    path: "hooks",
+    name: "React Hooks",
+    component: () => import("./topic4/ReactHooks.jsx")
   }
 
 ];
