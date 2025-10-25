@@ -1,0 +1,55 @@
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0,1);
+    background-color: black;
+    font-family: sans-serif;
+}
+
+h2, h3 {
+    text-align: center;
+    
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #d3bdbd;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form-data {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: rgb(27, 23, 15);
+    border: 1px solid darkred;
+    border-radius: 3px;
+    
+}
+
+.form-data p {
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+strong {
+    color: whitesmoke;
+}

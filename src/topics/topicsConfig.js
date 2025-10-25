@@ -29,6 +29,11 @@ export const topics = [
     path: "array&objects",
     name: "Passing Array and Objects to State",
     component: () => import("./topic4/Array&ObjectsState.jsx")
+  },
+  {
+    path: "formInput&useState",
+    name: "Managing Form Inputs with UseState",
+    component: () => import("./project2_useState/FormInput_useState.jsx")
   }
 
 ];
