@@ -35,10 +35,15 @@ export const topics = [
     name: "Project: Managing Form Inputs with UseState",
     component: () => import("./project2_useState/FormInput_useState.jsx")
   },
-   {
+  {
     path: "colorPicker",
     name: "Project: Color Picker",
     component: () => import("./project3_colorPicker/ColorPicker.jsx")
+  },
+  {
+    path: "useEffect",
+    name: "UseEffect Hook",
+    component: () => import("./topic5/UseEffect.jsx")
   }
 
 ];
