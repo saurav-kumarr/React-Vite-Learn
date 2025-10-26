@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import MouseTracker from './MouseTracker';
 
 // The useEffect hook in React lets you run code 
 // automatically when something changes or when a component loads.
@@ -26,7 +26,7 @@ function UseEffect(){
     useEffect(() => {
         document.title = `Count: ${count}`;
     },[count]);
-    
+
     useEffect(() => {
         console.log(`useEffect Triggered`);
     });
