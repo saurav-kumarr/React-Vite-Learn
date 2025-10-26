@@ -2,7 +2,7 @@
 export const topics = [
   {
     path: "portfolio",
-    name: "Portfolio Website",
+    name: "Project: Portfolio Website",
     component: () => import("./project1_portfolioWeb/PortfolioWeb.jsx")
   },
   {
@@ -32,8 +32,13 @@ export const topics = [
   },
   {
     path: "formInput&useState",
-    name: "Managing Form Inputs with UseState",
+    name: "Project: Managing Form Inputs with UseState",
     component: () => import("./project2_useState/FormInput_useState.jsx")
+  },
+   {
+    path: "colorPicker",
+    name: "Project: Color Picker",
+    component: () => import("./project3_colorPicker/ColorPicker.jsx")
   }
 
 ];
