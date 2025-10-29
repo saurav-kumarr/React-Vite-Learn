@@ -1,0 +1,19 @@
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+}
+
+.clock {
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #30135e;
+    background-color: #20232a;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #1d0303 0%, #e0e0e0 100%); /* Subtle gradient for depth */
+  
+  
+}

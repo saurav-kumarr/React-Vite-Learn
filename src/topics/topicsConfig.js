@@ -44,6 +44,11 @@ export const topics = [
     path: "useEffect",
     name: "UseEffect Hook",
     component: () => import("./topic5/UseEffect.jsx")
+  },
+  {
+    path: "digitalClock",
+    name: "Project: Digital Clock",
+    component: () => import("./project4_digitalClock/DigitalClock.jsx")
   }
 
 ];
