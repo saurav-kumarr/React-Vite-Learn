@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 
 function MouseTracker() {
     const [mousePosition, setMousePosition] = useState({ x:0, y:0});
@@ -8,6 +7,12 @@ function MouseTracker() {
             setMousePosition({x: event.clientX, y: event.clientY});
         };
         window.addEventListener('mousemove',handleMouseMove);
+
+        return () => {
+          window.removeEventListener('mousemove', handleMouseMove);
+
+        }
+
     }, []);
 
     return (
