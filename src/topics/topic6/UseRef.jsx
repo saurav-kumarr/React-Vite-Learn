@@ -22,6 +22,19 @@ function UseRef() {
         console.log(`Ref count: ${refCount.current}`);
     };
 
+
+
+    const inputRef = useRef(null);
+
+    const focusInput = () => {
+        inputRef.current.focus();
+        inputRef.current.style.backgroundColor = '#FFFDD0';
+    }
+
+    const resetFocus = () => {
+        inputRef.current.style.backgroundColor = '';
+    }
+
     return(
         <div>
             <h1>Learn React </h1>
@@ -30,6 +43,12 @@ function UseRef() {
 
             <p>Ref Count: {refCount.current}</p>
             <button onClick={incrementRefCount}>Increment Ref Count</button>
+
+            
+            <input ref={inputRef} type="text" placeholder='Focus me'></input>
+            <button onClick={focusInput}>Focus and Highlight</button>
+
+            <button onClick={resetFocus}>Reset</button>
         </div>
     );
 }
