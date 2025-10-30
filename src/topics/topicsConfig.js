@@ -54,6 +54,11 @@ export const topics = [
     path: "useRef",
     name: "UseRef Hook",
     component: () => import("./topic6/UseRef.jsx")
+  },
+   {
+    path: "propDrilling",
+    name: "Prop Drilling",
+    component: () => import("./topic7/PropDrilling.jsx")
   }
 
 ];
