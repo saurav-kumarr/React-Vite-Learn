@@ -49,6 +49,11 @@ export const topics = [
     path: "digitalClock",
     name: "Project: Digital Clock",
     component: () => import("./project4_digitalClock/DigitalClock.jsx")
+  },
+  {
+    path: "useRef",
+    name: "UseRef Hook",
+    component: () => import("./topic6/UseRef.jsx")
   }
 
 ];
