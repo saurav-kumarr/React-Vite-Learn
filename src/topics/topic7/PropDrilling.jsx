@@ -14,6 +14,12 @@ import { createContext } from "react";
 // Consme the Context
 // const contextValue = useContext(MyContext);
 
+// Provide the Context:
+{/* <MyContext.Provider value={someValue}>
+    <ComponentA />
+</MyContext.Provider> */}
+
+
 const MyContext = createContext("Light");
 
 function PropDrilling(){
@@ -21,10 +27,12 @@ function PropDrilling(){
     const theme = 'dark';
 
     return(
+        <MyContext.Provider value='Bright Provider'>
         <div style={{border:'2px solid black', padding:'20px'}}>
             <h2>Parent Component</h2>
             <ComponentA theme={theme} />
         </div>
+        </MyContext.Provider>
     );
 }
 
