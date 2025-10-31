@@ -59,6 +59,11 @@ export const topics = [
     path: "propDrilling",
     name: "Prop Drilling",
     component: () => import("./topic7/PropDrilling.jsx")
+  },
+  {
+    path: "customHooks",
+    name: "Custom Hooks",
+    component: () => import("./topic8/CustomHooks.jsx")
   }
 
 ];
