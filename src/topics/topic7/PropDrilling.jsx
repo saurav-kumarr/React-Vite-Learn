@@ -33,6 +33,8 @@ function PropDrilling(){
     };
 
     return(
+        <div>
+            <GlobalComponent />
         <MyContext.Provider value={themes}>
         <div style={{border:'2px solid black', padding:'20px'}}>
             <h2>Parent Component</h2>
@@ -40,6 +42,11 @@ function PropDrilling(){
             <ComponentA theme={theme} />
         </div>
         </MyContext.Provider>
+
+        <MyContext.Provider value="Dark">
+            <GlobalComponent />
+        </MyContext.Provider>
+        </div>
     );
 }
 
@@ -70,6 +77,20 @@ function ThemedComponent({theme}) {
             <h2>Themed Component(Great-Grand Child)</h2>
             <div>
                 <h3>The Current theme is: {theme}</h3>
+                <h3>The Current theme by useContext is: {contextValue}</h3>
+            </div>
+        </div>
+    );
+}
+
+function GlobalComponent() {
+
+    const contextValue = useContext(MyContext);
+
+    return(
+        <div style={{border:'2px solid purple', padding:'20px'}}>
+            <h2>Global Component(Outside Provider)</h2>
+            <div>
                 <h3>The Current theme by useContext is: {contextValue}</h3>
             </div>
         </div>
