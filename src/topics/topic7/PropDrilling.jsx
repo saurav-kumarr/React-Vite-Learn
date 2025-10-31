@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { Component, useContext, useState } from "react";
 import { createContext } from "react";
 
 //  - PropDrilling = DATA
@@ -26,10 +26,17 @@ function PropDrilling(){
 
     const theme = 'dark';
 
+    const [themes   , setTheme] = useState('Dynamic light');
+
+    const toggleTheme = () => {
+        setTheme(prevTheme => (prevTheme === 'Dynamic light' ?  'Dynamic dark' : 'Dynamic light'));
+    };
+
     return(
-        <MyContext.Provider value='Bright Provider'>
+        <MyContext.Provider value={themes}>
         <div style={{border:'2px solid black', padding:'20px'}}>
             <h2>Parent Component</h2>
+            <button onClick={toggleTheme}>Toggle Theme</button>
             <ComponentA theme={theme} />
         </div>
         </MyContext.Provider>
