@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import './PostAPIs';
+import PostAPIs from "./PostAPIs";
 
 function APIs() {
 
@@ -48,6 +50,7 @@ function APIs() {
     return (
         <div>
             <h1>API's</h1>
+            <PostAPIs />
             <ul>
                 {data.map((post) => (
                     <li key={post.id}>
