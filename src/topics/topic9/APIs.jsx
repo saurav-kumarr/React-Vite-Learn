@@ -17,14 +17,18 @@ function APIs() {
         setLoading(false);
         //throw new Error('Something went Wrong')
     })
-
-     axios.get('https://jsonplaceholder.typicode.com/posts/')
-      .then(response => {
-        console.log(response.data)
-        setData(response.data);
+    
+    axios.all([
+     axios.get('https://jsonplaceholder.typicode.com/posts/'),
+     axios.get('https://jsonplaceholder.typicode.com/users')
+    ])
+      .then(axios.spread((posts, users) => {
+        console.log(posts.data)
+        console.log(users.data)
+        //setData(users.data);
         setLoading(false);
         //throw new Error('Something went Wrong')
-    })
+    }))
 
     .catch((error) => {
         console.log(`Error fetching data: `, error);
