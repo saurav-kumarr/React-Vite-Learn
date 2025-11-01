@@ -64,6 +64,11 @@ export const topics = [
     path: "customHooks",
     name: "Custom Hooks",
     component: () => import("./topic8/CustomHooks.jsx")
+  },
+   {
+    path: "apiHub",
+    name: "API's",
+    component: () => import("./topic9/APIs.jsx")
   }
 
 ];
