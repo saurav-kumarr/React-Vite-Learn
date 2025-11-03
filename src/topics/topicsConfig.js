@@ -69,6 +69,11 @@ export const topics = [
     path: "apiHub",
     name: "API's",
     component: () => import("./topic9/APIs.jsx")
+  },
+  {
+    path: "formApp",
+    name: "Creation of Forms",
+    component: () => import("./topic10/FormApp.jsx")
   }
 
 ];
