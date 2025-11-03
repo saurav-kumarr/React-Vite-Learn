@@ -1,15 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
+import api from './api';
 
-axios.interceptors.request.use(request => {
-    console.log('Starting Request', request);
-    return request;
-});
-
-axios.interceptors.response.use(response => {
-    console.log('Response', response);
-    return response;
-});
 
 function PostAPIs() {
 
@@ -22,7 +14,7 @@ function PostAPIs() {
             body: 'bar',
             userId: 1,
         }
-        axios.post('https://jsonplaceholder.typicode.com/posts', newPost)
+        api.post('/posts', newPost)
         .then(response => {
             console.log('New Post Added: ',response.data);
             setData([response.data]);
