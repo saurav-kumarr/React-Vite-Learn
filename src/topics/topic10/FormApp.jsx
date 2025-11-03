@@ -7,9 +7,25 @@ function FormApp() {
         email:''
     });
 
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const newErrors = {};
+        if(!formData.name.trim()){
+            newErrors.name = 'Name is required';
+        }
+        return newErrors;
+        };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form Data Submitted ', formData);
+        const validationErrors = validate();
+        if(Object.keys(validationErrors).length > 0){
+            setErrors(validationErrors);
+        } else {
+            console.log('Form Data Submitted ', formData);
+        }
+        
 
     };
 
@@ -18,7 +34,13 @@ function FormApp() {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
-        })
+        });
+
+        if(errors[names]) {
+            const newErrors = {...errors};
+            delete newErrors[names];
+            setErrors(newErrors);
+        }
     };
 
     return(
@@ -32,6 +54,9 @@ function FormApp() {
                     value={formData.name}
                     onChange={handleChange}>
                     </input>
+                    <br />
+                    {errors.name && <span>{errors.name}</span>}
+                    <br />
                 </label>
 
                 <label >
