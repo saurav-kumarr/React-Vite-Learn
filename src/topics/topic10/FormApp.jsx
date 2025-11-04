@@ -36,9 +36,9 @@ function FormApp() {
             [e.target.name]: e.target.value,
         });
 
-        if(errors[names]) {
+        if(errors[name]) {
             const newErrors = {...errors};
-            delete newErrors[names];
+            delete newErrors[name];
             setErrors(newErrors);
         }
     };
