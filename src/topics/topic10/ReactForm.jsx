@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 
 function ReactForm(){
     
-    const {register, handleSubmit, watch, formState: {errors}} = useForm();
-    const onSubmit = (data) => console.log(data);
+    const {register, handleSubmit, watch, reset, formState: {errors}} = useForm();
+    const onSubmit = (data) => {
+        console.log(data);
+        reset();
+    }
 
     // console.log(watch('name'));
     // console.log(watch('email'));
@@ -19,6 +22,13 @@ function ReactForm(){
         console.log('Name', watchedEmail);
     }, [watchedEmail]);
 
+    const validateName = (value) => {
+        if(value !== 'admin') {
+            return 'Only admin is allowed';
+        }
+        return true;
+    }
+
     return(
         <div>
             <h1>Forms in React</h1>
@@ -30,7 +40,7 @@ function ReactForm(){
                                  {required: 'Name is required',
                                  minLength: {value: 2, 
                                             message: 'Name should be atleast 2 Character'
-                                                }})} />
+                                                },validate: validateName })} />
                 </label>
                 {errors.name && <p>{errors.name.message}</p>}
                 {/* {errors.name && <p>Name is required and should be atleast 2 characters</p>} */}
@@ -42,6 +52,7 @@ function ReactForm(){
                 {errors.email && <p>Email is Required</p>}
 
                 <button type='submit'>Submit</button>
+                <button type='button' onClick={() => reset()}>Reset</button>
             </form>
         </div>
     )
