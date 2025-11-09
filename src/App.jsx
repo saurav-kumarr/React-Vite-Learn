@@ -39,10 +39,16 @@ function App() {
         {/* Dynamically create routes */}
         {topics.map((t) => {
           const Component = lazy(t.component);
+
+          // // Just for Routing topic11
+          // const path = t.path === 'routing' 
+          //   ? `/topics/${t.path}/*`  // <-- Add /* to the end
+          //   : `/topics/${t.path}`;
+
           return (
             <Route
               key={t.path}
-              path={`/topics/${t.path}`}
+              path={`/topics/${t.path}/*`}
               element={<Component />}
             />
           );
@@ -51,7 +57,7 @@ function App() {
     </Suspense>
   );
 
-  
+    
 }
 
 export default App

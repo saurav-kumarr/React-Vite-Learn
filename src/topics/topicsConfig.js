@@ -74,6 +74,11 @@ export const topics = [
     path: "reactForm",
     name: "Creation of Forms using React",
     component: () => import("./topic10/ReactForm.jsx")
+  },
+  {
+    path: "routing",
+    name: "React Routing",
+    component: () => import("./topic11/RoutingApp.jsx")
   }
 
 ];
