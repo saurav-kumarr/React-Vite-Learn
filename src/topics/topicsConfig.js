@@ -79,6 +79,16 @@ export const topics = [
     path: "routing",
     name: "React Routing",
     component: () => import("./topic11/RoutingApp.jsx")
+  },
+  {
+    path: "routeHook",
+    name: "React Route Hooks",
+    component: () => import("./topic12/RouterHook.jsx")
+  },
+  {
+    path: "reduxExample",
+    name: "React Redux",
+    component: () => import("./topic13/ReduxApp.jsx")
   }
 
 ];
