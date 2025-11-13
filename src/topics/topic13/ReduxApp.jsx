@@ -1,4 +1,5 @@
 import Counter from "./Counter";
+import Display from "./Display";
 
 
 function ReduxApp() {
@@ -6,6 +7,7 @@ function ReduxApp() {
         <div>
             <p>Welcome!</p>
             <Counter/>
+            <Display/>
         </div>
     )
 }

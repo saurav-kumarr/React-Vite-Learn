@@ -89,6 +89,11 @@ export const topics = [
     path: "reduxExample",
     name: "React Redux",
     component: () => import("./topic13/ReduxApp.jsx")
+  },
+   {
+    path: "stateManagment",
+    name: "Project: Fetching Data From Remote API and State Management Using Redux",
+    component: () => import("./project5_stateManage/PostList.jsx")
   }
 
 ];
